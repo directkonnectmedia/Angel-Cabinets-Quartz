@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 
 import Script from 'dangerous-html/react'
-import { useTranslations } from 'next-intl'
 
 const Navigation = (props) => {
   return (
@@ -22,40 +21,18 @@ const Navigation = (props) => {
             <div className="navigation-desktop-menu">
               <ul className="navigation-links-list">
                 <li className="navigation-link-item">
-                  <Link href="/">
-                    <a>
-                      <div className="navigation-link">
-                        <span>Work</span>
-                      </div>
-                    </a>
-                  </Link>
+                  <a href="#services" className="navigation-anchor">
+                    <div className="navigation-link">
+                      <span>Services</span>
+                    </div>
+                  </a>
                 </li>
                 <li className="navigation-link-item">
-                  <Link href="/">
-                    <a>
-                      <div className="navigation-link">
-                        <span>Services</span>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-                <li className="navigation-link-item">
-                  <Link href="/">
-                    <a>
-                      <div className="navigation-link">
-                        <span>Materials</span>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-                <li className="navigation-link-item">
-                  <Link href="/">
-                    <a>
-                      <div className="navigation-link">
-                        <span>Contact</span>
-                      </div>
-                    </a>
-                  </Link>
+                  <a href="#contact" className="navigation-anchor">
+                    <div className="navigation-link">
+                      <span>Contact</span>
+                    </div>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -82,13 +59,11 @@ const Navigation = (props) => {
                   <span className="navigation-phone-text">602-465-9425</span>
                 </div>
               </a>
-              <Link href="/">
-                <a>
-                  <div className="navigation-cta btn-primary btn-sm btn">
-                    <span>Book Consult</span>
-                  </div>
-                </a>
-              </Link>
+              <a href="#contact" className="navigation-anchor">
+                <div className="navigation-cta btn-primary btn-sm btn">
+                  <span>Book Consult</span>
+                </div>
+              </a>
               <button
                 id="navigation-mobile-toggle"
                 aria-label="Toggle Menu"
@@ -147,40 +122,18 @@ const Navigation = (props) => {
           <div className="navigation-overlay-content">
             <ul className="navigation-overlay-links">
               <li className="navigation-overlay-item">
-                <Link href="/">
-                  <a>
-                    <div className="navigation-overlay-link">
-                      <span>Work</span>
-                    </div>
-                  </a>
-                </Link>
+                <a href="#services" className="navigation-anchor">
+                  <div className="navigation-overlay-link">
+                    <span>Services</span>
+                  </div>
+                </a>
               </li>
               <li className="navigation-overlay-item">
-                <Link href="/">
-                  <a>
-                    <div className="navigation-overlay-link">
-                      <span>Services</span>
-                    </div>
-                  </a>
-                </Link>
-              </li>
-              <li className="navigation-overlay-item">
-                <Link href="/">
-                  <a>
-                    <div className="navigation-overlay-link">
-                      <span>Materials</span>
-                    </div>
-                  </a>
-                </Link>
-              </li>
-              <li className="navigation-overlay-item">
-                <Link href="/">
-                  <a>
-                    <div className="navigation-overlay-link">
-                      <span>Contact</span>
-                    </div>
-                  </a>
-                </Link>
+                <a href="#contact" className="navigation-anchor">
+                  <div className="navigation-overlay-link">
+                    <span>Contact</span>
+                  </div>
+                </a>
               </li>
             </ul>
             <div className="navigation-overlay-footer">
@@ -189,13 +142,11 @@ const Navigation = (props) => {
                   <span>602-465-9425</span>
                 </div>
               </a>
-              <Link href="/">
-                <a>
-                  <div className="btn-lg btn-primary btn">
-                    <span>Book Consult</span>
-                  </div>
-                </a>
-              </Link>
+              <a href="#contact" className="navigation-anchor">
+                <div className="btn-lg btn-primary btn">
+                  <span>Book Consult</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
@@ -237,6 +188,12 @@ const Navigation = (props) => {
 
   overlayLinks.forEach((link) => {
     link.addEventListener("click", () => toggleMenu(false))
+  })
+
+  // Close mobile overlay when clicking any anchor link inside it
+  const overlayAnchors = mobileOverlay.querySelectorAll('a[href^="#"]')
+  overlayAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", () => toggleMenu(false))
   })
 
   window.addEventListener("scroll", () => {

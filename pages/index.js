@@ -25,7 +25,7 @@ const Home = (props) => {
         </Head>
         <Navigation></Navigation>
         <section className="editorial-hero">
-          <div className="editorial-hero-container">
+          <div className="editorial-hero-container hero-grid">
             <div className="editorial-hero-content">
               <div className="editorial-hero-trust-row">
                 <span className="editorial-hero-metric">Crafted by Angel</span>
@@ -43,10 +43,16 @@ const Home = (props) => {
                 the individual client.
               </p>
               <div className="editorial-hero-actions">
-                <button id="hero-book-btn" className="btn-lg btn-primary btn">
-                  Book Consult
-                </button>
-                <a href="tel:6024659425">
+                <a href="#contact" className="navigation-anchor">
+                  <button
+                    id="hero-book-btn"
+                    type="button"
+                    className="btn-lg btn-primary btn"
+                  >
+                    Book Consult
+                  </button>
+                </a>
+                <a href="#contact" className="navigation-anchor">
                   <div className="editorial-hero-phone">
                     <div className="editorial-hero-icon-wrapper">
                       <svg
@@ -68,44 +74,18 @@ const Home = (props) => {
                 </a>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="featured-project">
-          <div className="featured-project-marquee">
-            <div className="marquee-content">
-              <span>CUSTOM CABINETS</span>
-              <span className="marquee-dot"></span>
-              <span>GRANITE</span>
-              <span className="marquee-dot"></span>
-              <span>QUARTZ</span>
-              <span className="marquee-dot"></span>
-              <span>BATHROOM VANITIES</span>
-              <span className="marquee-dot"></span>
-              <span>ARTIFICIAL ROCK SLABS</span>
-              <span className="marquee-dot"></span>
-              <span>CUSTOM CABINETS</span>
-              <span className="marquee-dot"></span>
-              <span>GRANITE</span>
-              <span className="marquee-dot"></span>
-              <span>QUARTZ</span>
-              <span className="marquee-dot"></span>
-              <span>BATHROOM VANITIES</span>
-              <span className="marquee-dot"></span>
-              <span>ARTIFICIAL ROCK SLABS</span>
-              <span className="marquee-dot"></span>
-            </div>
-          </div>
-          <div className="featured-project-container">
-            <div className="featured-project-media">
+            <div className="hero-feature-media">
               <img
-                alt="Luxury modern kitchen with custom dark cabinetry"
+                alt="The Obsidian Suite - Luxury modern kitchen with custom dark cabinetry"
                 src="https://images.pexels.com/photos/6264414/pexels-photo-6264414.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                className="featured-project-image"
+                className="hero-feature-image"
               />
-              <div className="featured-project-glass-card">
-                <span className="section-subtitle">Featured Project</span>
-                <h2 className="section-title">The Obsidian Suite</h2>
-                <div className="featured-project-details">
+              <div className="hero-feature-glass-card">
+                <span className="section-subtitle hero-feature-tag">
+                  Featured Project
+                </span>
+                <h2 className="hero-feature-title">The Obsidian Suite</h2>
+                <div className="hero-feature-details">
                   <div className="detail-item">
                     <span className="detail-label">Materials</span>
                     <span className="detail-value">
@@ -117,14 +97,35 @@ const Home = (props) => {
                     <span className="detail-value">Scottsdale, AZ</span>
                   </div>
                 </div>
-                <button className="btn-outline btn-sm btn">
-                  View Case Study
-                </button>
               </div>
             </div>
           </div>
         </section>
-        <section className="editorial-spread">
+        <section className="hero-marquee-divider">
+          <div className="marquee-content">
+            <span>CUSTOM CABINETS</span>
+            <span className="marquee-dot"></span>
+            <span>GRANITE</span>
+            <span className="marquee-dot"></span>
+            <span>QUARTZ</span>
+            <span className="marquee-dot"></span>
+            <span>BATHROOM VANITIES</span>
+            <span className="marquee-dot"></span>
+            <span>ARTIFICIAL ROCK SLABS</span>
+            <span className="marquee-dot"></span>
+            <span>CUSTOM CABINETS</span>
+            <span className="marquee-dot"></span>
+            <span>GRANITE</span>
+            <span className="marquee-dot"></span>
+            <span>QUARTZ</span>
+            <span className="marquee-dot"></span>
+            <span>BATHROOM VANITIES</span>
+            <span className="marquee-dot"></span>
+            <span>ARTIFICIAL ROCK SLABS</span>
+            <span className="marquee-dot"></span>
+          </div>
+        </section>
+        <section id="services" className="editorial-spread">
           <div className="editorial-spread-container">
             <div className="editorial-spread-header">
               <h2 className="section-title">The Editorial Spread</h2>
@@ -526,7 +527,7 @@ const Home = (props) => {
             </div>
           </div>
         </section>
-        <section className="lead-gen">
+        <section id="contact" className="lead-gen">
           <div className="lead-gen-container">
             <div className="lead-gen-split">
               <div className="lead-gen-info">
@@ -599,173 +600,236 @@ const Home = (props) => {
               <div className="lead-gen-form-wrapper">
                 <form
                   id="consult-form"
-                  action="/submit"
+                  action="#"
                   method="POST"
-                  data-form-id="ecd80247-95de-40e3-9ca6-5e0971b7c392"
                   className="wizard-form"
                 >
+                  <div className="wizard-progress">
+                    <span className="wizard-progress-step active" data-progress="1"></span>
+                    <span className="wizard-progress-step" data-progress="2"></span>
+                    <span className="wizard-progress-step" data-progress="3"></span>
+                    <span className="wizard-progress-step" data-progress="4"></span>
+                    <span className="wizard-progress-step" data-progress="5"></span>
+                  </div>
+
                   <div data-step="1" className="active wizard-step">
                     <h3 className="section-subtitle">What are we building?</h3>
+                    <p className="wizard-helper">Choose one to begin.</p>
                     <div className="form-options-grid">
-                      <label className="option-card">
+                      <label className="option-card auto-advance">
                         <input
                           type="radio"
-                          id="thq_project_type_kWYC"
                           name="project_type"
                           value="cabinets"
-                          required="true"
-                          data-form-field-id="thq_project_type_kWYC"
                         />
-                        <span className="home-thq-option-content-elm1">
-                          Custom Cabinets
-                        </span>
+                        <span className="option-content">Custom Cabinets</span>
                       </label>
-                      <label className="option-card">
+                      <label className="option-card auto-advance">
                         <input
                           type="radio"
-                          id="thq_project_type_AbNj"
                           name="project_type"
                           value="countertops"
-                          data-form-field-id="thq_project_type_AbNj"
                         />
-                        <span className="home-thq-option-content-elm2">
-                          Countertops
-                        </span>
+                        <span className="option-content">Countertops</span>
                       </label>
-                      <label className="option-card">
+                      <label className="option-card auto-advance">
                         <input
                           type="radio"
-                          id="thq_project_type_0ASv"
                           name="project_type"
                           value="vanities"
-                          data-form-field-id="thq_project_type_0ASv"
                         />
-                        <span className="home-thq-option-content-elm3">
-                          Bathroom Vanities
-                        </span>
+                        <span className="option-content">Bathroom Vanities</span>
+                      </label>
+                      <label className="option-card auto-advance">
+                        <input
+                          type="radio"
+                          name="project_type"
+                          value="custom"
+                        />
+                        <span className="option-content">Custom Work</span>
                       </label>
                     </div>
-                    <button
-                      id="thq_button_xo4F"
-                      name="button"
-                      type="button"
-                      data-form-field-id="thq_button_xo4F"
-                      className="btn-full next-step btn-primary btn"
-                    >
-                      Next Step
-                    </button>
                   </div>
+
                   <div data-step="2" className="wizard-step">
                     <h3 className="section-subtitle">Preferred Materials</h3>
+                    <p className="wizard-helper">Select all that apply.</p>
                     <div className="form-options-grid">
                       <label className="option-card">
                         <input
                           type="checkbox"
-                          id="thq_materials_7YRt"
                           name="materials"
                           value="quartz"
-                          data-form-field-id="thq_materials_7YRt"
                         />
-                        <span className="home-thq-option-content-elm4">
-                          Quartz
-                        </span>
+                        <span className="option-content">Quartz</span>
                       </label>
                       <label className="option-card">
                         <input
                           type="checkbox"
-                          id="thq_materials_ncYZ"
                           name="materials"
                           value="granite"
-                          data-form-field-id="thq_materials_ncYZ"
                         />
-                        <span className="home-thq-option-content-elm5">
-                          Granite
-                        </span>
+                        <span className="option-content">Granite</span>
                       </label>
                       <label className="option-card">
                         <input
                           type="checkbox"
-                          id="thq_materials_MmNL"
                           name="materials"
                           value="rock"
-                          data-form-field-id="thq_materials_MmNL"
                         />
-                        <span className="home-thq-option-content-elm6">
-                          Artificial Rock
-                        </span>
+                        <span className="option-content">Artificial Rock</span>
                       </label>
                     </div>
                     <div className="wizard-actions">
                       <button
-                        id="thq_button_a337"
-                        name="button"
                         type="button"
-                        data-form-field-id="thq_button_a337"
                         className="prev-step btn-outline btn"
                       >
                         Back
                       </button>
                       <button
-                        id="thq_button_efwB"
-                        name="button"
                         type="button"
-                        data-form-field-id="thq_button_efwB"
                         className="next-step btn-primary btn"
                       >
                         Next Step
                       </button>
                     </div>
                   </div>
+
                   <div data-step="3" className="wizard-step">
+                    <h3 className="section-subtitle">Project Timeline</h3>
+                    <p className="wizard-helper">When are you hoping to begin?</p>
+                    <div className="form-options-grid">
+                      <label className="option-card">
+                        <input
+                          type="radio"
+                          name="timeline"
+                          value="asap"
+                          required="true"
+                        />
+                        <span className="option-content">ASAP</span>
+                      </label>
+                      <label className="option-card">
+                        <input
+                          type="radio"
+                          name="timeline"
+                          value="1-3-months"
+                        />
+                        <span className="option-content">1 – 3 Months</span>
+                      </label>
+                      <label className="option-card">
+                        <input
+                          type="radio"
+                          name="timeline"
+                          value="3-6-months"
+                        />
+                        <span className="option-content">3 – 6 Months</span>
+                      </label>
+                      <label className="option-card">
+                        <input
+                          type="radio"
+                          name="timeline"
+                          value="quote-only"
+                        />
+                        <span className="option-content">Just A Quote</span>
+                      </label>
+                      <label className="option-card">
+                        <input
+                          type="radio"
+                          name="timeline"
+                          value="browsing"
+                        />
+                        <span className="option-content">Just Browsing</span>
+                      </label>
+                    </div>
+                    <div className="wizard-actions">
+                      <button
+                        type="button"
+                        className="prev-step btn-outline btn"
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="button"
+                        className="next-step btn-primary btn"
+                      >
+                        Next Step
+                      </button>
+                    </div>
+                  </div>
+
+                  <div data-step="4" className="wizard-step">
+                    <h3 className="section-subtitle">Project Details</h3>
+                    <p className="wizard-helper">
+                      Share anything you&apos;d like — budget, dimensions,
+                      inspiration, finish preferences. Optional but helpful.
+                    </p>
+                    <div className="form-group">
+                      <textarea
+                        name="details"
+                        rows="6"
+                        placeholder="Tell us about your vision..."
+                        className="form-input form-textarea"
+                      ></textarea>
+                    </div>
+                    <div className="wizard-actions">
+                      <button
+                        type="button"
+                        className="prev-step btn-outline btn"
+                      >
+                        Back
+                      </button>
+                      <button
+                        type="button"
+                        className="next-step btn-primary btn"
+                      >
+                        Next Step
+                      </button>
+                    </div>
+                  </div>
+
+                  <div data-step="5" className="wizard-step">
                     <h3 className="section-subtitle">Contact Details</h3>
+                    <p className="wizard-helper">
+                      Full name is required. Provide an email, phone, or both —
+                      whichever you prefer.
+                    </p>
                     <div className="form-group">
                       <input
                         type="text"
-                        id="thq_true_Yxtl"
-                        name="true"
+                        name="full_name"
                         required="true"
-                        placeholder="Full Name"
-                        data-form-field-id="thq_true_Yxtl"
+                        placeholder="Full Name *"
                         className="form-input"
                       />
                     </div>
                     <div className="form-group">
                       <input
                         type="email"
-                        id="thq_email_gBKq"
                         name="email"
-                        required="true"
                         placeholder="Email Address"
-                        data-form-field-id="thq_email_gBKq"
                         className="form-input"
                       />
                     </div>
                     <div className="form-group">
                       <input
                         type="tel"
-                        id="thq_phone_Ns4Q"
                         name="phone"
-                        required="true"
                         placeholder="Phone Number"
-                        data-form-field-id="thq_phone_Ns4Q"
                         className="form-input"
                       />
                     </div>
+                    <p className="wizard-error" id="contact-error"></p>
                     <div className="wizard-actions">
                       <button
-                        id="thq_button_28eQ"
-                        name="button"
                         type="button"
-                        data-form-field-id="thq_button_28eQ"
                         className="prev-step btn-outline btn"
                       >
                         Back
                       </button>
                       <button
-                        id="thq_button_q5Qb"
-                        name="button"
                         type="submit"
-                        data-form-field-id="thq_button_q5Qb"
+                        id="submit-consult"
                         className="btn-accent btn"
                       >
                         Request Consultation
@@ -803,12 +867,52 @@ const Home = (props) => {
                       <span>(602) 465-9425</span>
                     </div>
                   </a>
-                  <button className="btn-primary btn">Book Consult</button>
+                  <a href="#contact" className="navigation-anchor">
+                    <button type="button" className="btn-primary btn">
+                      Book Consult
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <div
+          id="thank-you-modal"
+          className="modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <div className="modal-card">
+            <button
+              type="button"
+              id="modal-close"
+              aria-label="Close"
+              className="modal-close"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+            <h3 id="modal-title" className="modal-title">
+              Thank you for selecting our services
+            </h3>
+            <p className="modal-subtitle">
+              Angel will reach out shortly to begin crafting your vision.
+            </p>
+          </div>
+        </div>
         <div className="home-container2">
           <div className="home-container3">
             <Script
@@ -831,35 +935,65 @@ transform: translateX(0);}}
               html={`<script defer data-name="wizard-form-logic">
 (function(){
   const wizardForm = document.getElementById("consult-form")
-  const steps = wizardForm.querySelectorAll(".wizard-step")
+  if (!wizardForm) return
   const nextBtns = wizardForm.querySelectorAll(".next-step")
   const prevBtns = wizardForm.querySelectorAll(".prev-step")
+  const progressDots = wizardForm.querySelectorAll(".wizard-progress-step")
+  const autoAdvanceCards = wizardForm.querySelectorAll(".option-card.auto-advance input")
+  const errorEl = document.getElementById("contact-error")
+  const submitBtn = document.getElementById("submit-consult")
+  const modal = document.getElementById("thank-you-modal")
+  const modalClose = document.getElementById("modal-close")
+
+  const updateProgress = (stepIndex) => {
+    progressDots.forEach((dot) => {
+      const dotStep = parseInt(dot.dataset.progress)
+      if (dotStep <= stepIndex) {
+        dot.classList.add("active")
+      } else {
+        dot.classList.remove("active")
+      }
+    })
+  }
+
+  const goToStep = (targetStep) => {
+    const currentActive = wizardForm.querySelector(".wizard-step.active")
+    if (currentActive) currentActive.classList.remove("active")
+    const target = wizardForm.querySelector(\`.wizard-step[data-step="\${targetStep}"]\`)
+    if (target) {
+      target.classList.add("active")
+      updateProgress(targetStep)
+    }
+  }
+
+  // Auto-advance on Step 1 selection
+  autoAdvanceCards.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (input.checked) {
+        setTimeout(() => goToStep(2), 200)
+      }
+    })
+  })
 
   nextBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       const currentStep = btn.closest(".wizard-step")
       const stepIndex = parseInt(currentStep.dataset.step)
-
-      // Basic validation for current step
       const inputs = currentStep.querySelectorAll("input[required]")
       let isValid = true
       inputs.forEach((input) => {
         if (input.type === "radio") {
-          const name = input.name
-          if (!wizardForm.querySelector(\`input[name="\${name}"]:checked\`)) {
+          if (!wizardForm.querySelector(\`input[name="\${input.name}"]:checked\`)) {
             isValid = false
           }
         } else if (!input.value) {
           isValid = false
         }
       })
-
       if (isValid) {
-        currentStep.classList.remove("active")
-        const nextStep = wizardForm.querySelector(\`.wizard-step[data-step="\${stepIndex + 1}"]\`)
-        if (nextStep) nextStep.classList.add("active")
+        goToStep(stepIndex + 1)
       } else {
-        alert("Please complete the required fields.")
+        alert("Please make a selection to continue.")
       }
     })
   })
@@ -868,25 +1002,47 @@ transform: translateX(0);}}
     btn.addEventListener("click", () => {
       const currentStep = btn.closest(".wizard-step")
       const stepIndex = parseInt(currentStep.dataset.step)
-
-      currentStep.classList.remove("active")
-      const prevStep = wizardForm.querySelector(\`.wizard-step[data-step="\${stepIndex - 1}"]\`)
-      if (prevStep) prevStep.classList.add("active")
+      goToStep(stepIndex - 1)
     })
   })
 
-  // Parallax effect for featured image
-  window.addEventListener("scroll", () => {
-    const featuredImg = document.querySelector(".featured-project-image")
-    if (featuredImg) {
-      const rect = featuredImg.getBoundingClientRect()
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const speed = 0.15
-        const offset = (window.innerHeight - rect.top) * speed
-        featuredImg.style.transform = \`scale(1.1) translateY(\${offset - 50}px)\`
-      }
+  wizardForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    if (errorEl) errorEl.textContent = ""
+    const name = wizardForm.querySelector('input[name="full_name"]').value.trim()
+    const email = wizardForm.querySelector('input[name="email"]').value.trim()
+    const phone = wizardForm.querySelector('input[name="phone"]').value.trim()
+
+    if (!name) {
+      if (errorEl) errorEl.textContent = "Please enter your full name."
+      return
     }
+    if (!email && !phone) {
+      if (errorEl) errorEl.textContent = "Please provide an email, a phone number, or both."
+      return
+    }
+
+    if (modal) {
+      modal.classList.add("open")
+      document.body.style.overflow = "hidden"
+    }
+    wizardForm.reset()
+    goToStep(1)
   })
+
+  if (modalClose && modal) {
+    const closeModal = () => {
+      modal.classList.remove("open")
+      document.body.style.overflow = ""
+    }
+    modalClose.addEventListener("click", closeModal)
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal()
+    })
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("open")) closeModal()
+    })
+  }
 })()
 </script>`}
             ></Script>
