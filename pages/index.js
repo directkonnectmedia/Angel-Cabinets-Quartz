@@ -44,11 +44,6 @@ const Home = (props) => {
                   <h1 className="hero-title">
                     Bespoke Craftsmanship Tailored to You.
                   </h1>
-                  <p className="hero-subtitle">
-                    Elevating architectural spaces through pure bespoke artistry. No
-                    templates, no shortcuts—just 100% custom excellence designed for
-                    the individual client.
-                  </p>
                   <div className="editorial-hero-actions">
                     <a href="#contact" className="navigation-anchor">
                       <button

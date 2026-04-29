@@ -1777,6 +1777,7 @@ html {
   flex-direction: column;
   align-items: center;
   margin: auto;
+  padding-bottom: 120px;
 }
 
 .editorial-hero-trust-row {
@@ -2100,11 +2101,12 @@ html {
     width: 100%;
   }
   .hero-feature-glass-card {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    margin-top: var(--spacing-2xl);
+    position: absolute;
+    right: var(--spacing-lg);
+    bottom: var(--spacing-lg);
+    width: calc(100% - var(--spacing-lg) * 2);
+    max-width: 360px;
+    margin-top: 0;
   }
   .thq-grid-4 {
     grid-template-columns: 1fr 1fr 1fr;
@@ -2268,7 +2270,14 @@ html {
   }
   .hero-feature-glass-card {
     padding: var(--spacing-md);
-    margin-top: var(--spacing-xl);
+    margin-top: 0;
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+    width: calc(100% - var(--spacing-md) * 2);
+    max-width: 320px;
+  }
+  .editorial-hero-content {
+    padding-bottom: 160px;
   }
   .hero-feature-details {
     gap: var(--spacing-sm);
