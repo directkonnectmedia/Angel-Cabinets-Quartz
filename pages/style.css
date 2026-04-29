@@ -994,6 +994,9 @@ html {
 .navigation-desktop-menu {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  padding-right: var(--spacing-xl);
 }
  
 .navigation-actions {
@@ -1017,6 +1020,10 @@ html {
   display: flex;
   padding: 0;
   list-style: none;
+}
+
+.navigation-link-item:last-child {
+  margin-left: var(--spacing-2xl);
 }
  
 .navigation-phone-link {
