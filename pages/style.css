@@ -2046,45 +2046,57 @@ html {
  
 @media(max-width: 991px) {
   .editorial-hero {
-    padding: 0;
+    padding: var(--spacing-2xl) 0 var(--spacing-xl);
   }
   .editorial-hero-container {
-    padding: 0;
-    max-width: 100%;
+    padding: 0 var(--spacing-lg);
   }
   .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    gap: 0;
-  }
-  .hero-feature-media {
-    grid-column: 1;
-    grid-row: 1;
-    margin: 0;
-    max-width: 100%;
-    aspect-ratio: auto;
-    height: 85vh;
-    min-height: 650px;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  .editorial-hero-content {
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 10;
-    padding: var(--spacing-4xl) var(--spacing-xl) 220px;
-    background: linear-gradient(to bottom, rgba(23, 24, 28, 0.95) 0%, rgba(23, 24, 28, 0.4) 40%, rgba(23, 24, 28, 0.85) 100%);
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-2xl);
+  }
+  .editorial-hero-content {
+    order: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .editorial-hero-trust-row {
     justify-content: center;
   }
+  .hero-title::after {
+    margin: var(--spacing-md) auto 0;
+  }
+  .editorial-hero-actions {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .editorial-hero-actions .navigation-anchor {
+    width: 100%;
+  }
+  .editorial-hero-actions .btn {
+    width: 100%;
+  }
+  .hero-feature-media {
+    order: 2;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 3/4;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-level-3);
+  }
   .hero-feature-glass-card {
-    left: var(--spacing-md);
-    right: var(--spacing-md);
-    bottom: var(--spacing-md);
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    bottom: var(--spacing-sm);
     width: auto;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
   }
   .thq-grid-4 {
     grid-template-columns: 1fr 1fr 1fr;
