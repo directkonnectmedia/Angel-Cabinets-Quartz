@@ -2194,8 +2194,9 @@ html {
   }
   .editorial-hero-actions {
     gap: var(--spacing-lg);
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    width: 100%;
   }
   .portfolio-masonry {
     grid-template-columns: 1fr;
