@@ -1734,45 +1734,76 @@ html {
 }
 
 .editorial-hero {
-  min-height: auto;
   padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+  background-color: var(--color-surface);
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: var(--spacing-4xl);
-  align-items: center;
-}
-
-.hero-feature-media {
+.hero-centerpiece-card {
   position: relative;
-  aspect-ratio: 3/4;
   width: 100%;
-  max-width: 520px;
-  margin-left: auto;
-  overflow: hidden;
+  min-height: 85vh;
   border-radius: var(--border-radius-lg);
+  overflow: hidden;
   box-shadow: var(--shadow-level-3);
-  animation: fadeIn 1.1s ease-out 0.15s both;
+  display: flex;
 }
 
-.hero-feature-image {
+.hero-centerpiece-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
+  z-index: 1;
+  animation: fadeIn 1.1s ease-out 0.15s both;
 }
 
-.hero-feature-media:hover .hero-feature-image {
-  transform: scale(1.04);
+.hero-centerpiece-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(23, 24, 28, 0.8) 0%, rgba(23, 24, 28, 0.4) 50%, rgba(23, 24, 28, 0.85) 100%);
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+.editorial-hero-content {
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.editorial-hero-trust-row {
+  justify-content: center;
+  gap: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-title::after {
+  margin: var(--spacing-md) auto 0;
+}
+
+.editorial-hero-actions {
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-2xl);
+  display: flex;
+  margin-top: var(--spacing-3xl);
 }
 
 .hero-feature-glass-card {
   position: absolute;
-  left: var(--spacing-lg);
-  right: var(--spacing-lg);
-  bottom: var(--spacing-lg);
+  right: var(--spacing-2xl);
+  bottom: var(--spacing-2xl);
+  width: 380px;
   padding: var(--spacing-xl);
   display: flex;
   flex-direction: column;
@@ -1783,6 +1814,7 @@ html {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   z-index: 3;
+  text-align: left;
 }
 
 .hero-feature-tag {
@@ -2051,52 +2083,28 @@ html {
   .editorial-hero-container {
     padding: 0 var(--spacing-lg);
   }
-  .hero-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
+  .hero-centerpiece-card {
+    min-height: 85vh;
+    border-radius: var(--border-radius-md);
   }
-  .editorial-hero-content {
-    order: 1;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .editorial-hero-trust-row {
-    justify-content: center;
-  }
-  .hero-title::after {
-    margin: var(--spacing-md) auto 0;
+  .hero-centerpiece-overlay {
+    padding: var(--spacing-2xl) var(--spacing-md);
   }
   .editorial-hero-actions {
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    gap: var(--spacing-lg);
     width: 100%;
   }
-  .editorial-hero-actions .navigation-anchor {
-    width: 100%;
-  }
+  .editorial-hero-actions .navigation-anchor,
   .editorial-hero-actions .btn {
     width: 100%;
   }
-  .hero-feature-media {
-    order: 2;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 500px;
-    aspect-ratio: 3/4;
-    height: auto;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-level-3);
-  }
   .hero-feature-glass-card {
-    left: var(--spacing-sm);
-    right: var(--spacing-sm);
-    bottom: var(--spacing-sm);
-    width: auto;
-    padding: var(--spacing-md);
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: var(--spacing-2xl);
   }
   .thq-grid-4 {
     grid-template-columns: 1fr 1fr 1fr;
@@ -2260,6 +2268,7 @@ html {
   }
   .hero-feature-glass-card {
     padding: var(--spacing-md);
+    margin-top: var(--spacing-xl);
   }
   .hero-feature-details {
     gap: var(--spacing-sm);

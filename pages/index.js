@@ -25,76 +25,79 @@ const Home = (props) => {
         </Head>
         <Navigation></Navigation>
         <section className="editorial-hero">
-          <div className="editorial-hero-container hero-grid">
-            <div className="editorial-hero-content">
-              <div className="editorial-hero-trust-row">
-                <span className="editorial-hero-metric">Crafted by Angel</span>
-                <div className="editorial-hero-divider"></div>
-                <span className="editorial-hero-metric">
-                  Arizona&apos;s Premier Custom Studio
-                </span>
-              </div>
-              <h1 className="hero-title">
-                Bespoke Craftsmanship Tailored to You.
-              </h1>
-              <p className="hero-subtitle">
-                Elevating architectural spaces through pure bespoke artistry. No
-                templates, no shortcuts—just 100% custom excellence designed for
-                the individual client.
-              </p>
-              <div className="editorial-hero-actions">
-                <a href="#contact" className="navigation-anchor">
-                  <button
-                    id="hero-book-btn"
-                    type="button"
-                    className="btn-lg btn-primary btn"
-                  >
-                    Book Consult
-                  </button>
-                </a>
-                <a href="#contact" className="navigation-anchor">
-                  <div className="editorial-hero-phone">
-                    <div className="editorial-hero-icon-wrapper">
-                      <svg
-                        fill="none"
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
-                    </div>
-                    <span>(602) 465-9425</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="hero-feature-media">
+          <div className="editorial-hero-container">
+            <div className="hero-centerpiece-card">
               <img
                 alt="The Obsidian Suite - Luxury modern kitchen with custom dark cabinetry"
                 src="https://images.pexels.com/photos/6264414/pexels-photo-6264414.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                className="hero-feature-image"
+                className="hero-centerpiece-image"
               />
-              <div className="hero-feature-glass-card">
-                <span className="section-subtitle hero-feature-tag">
-                  Featured Project
-                </span>
-                <h2 className="hero-feature-title">The Obsidian Suite</h2>
-                <div className="hero-feature-details">
-                  <div className="detail-item">
-                    <span className="detail-label">Materials</span>
-                    <span className="detail-value">
-                      Quartz &amp; Custom Oak
+              <div className="hero-centerpiece-overlay">
+                <div className="editorial-hero-content">
+                  <div className="editorial-hero-trust-row">
+                    <span className="editorial-hero-metric">Crafted by Angel</span>
+                    <div className="editorial-hero-divider"></div>
+                    <span className="editorial-hero-metric">
+                      Arizona&apos;s Premier Custom Studio
                     </span>
                   </div>
-                  <div className="detail-item">
-                    <span className="detail-label">Location</span>
-                    <span className="detail-value">Scottsdale, AZ</span>
+                  <h1 className="hero-title">
+                    Bespoke Craftsmanship Tailored to You.
+                  </h1>
+                  <p className="hero-subtitle">
+                    Elevating architectural spaces through pure bespoke artistry. No
+                    templates, no shortcuts—just 100% custom excellence designed for
+                    the individual client.
+                  </p>
+                  <div className="editorial-hero-actions">
+                    <a href="#contact" className="navigation-anchor">
+                      <button
+                        id="hero-book-btn"
+                        type="button"
+                        className="btn-lg btn-primary btn"
+                      >
+                        Book Consult
+                      </button>
+                    </a>
+                    <a href="#contact" className="navigation-anchor">
+                      <div className="editorial-hero-phone">
+                        <div className="editorial-hero-icon-wrapper">
+                          <svg
+                            fill="none"
+                            width="24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="24"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                          </svg>
+                        </div>
+                        <span>(602) 465-9425</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="hero-feature-glass-card">
+                  <span className="section-subtitle hero-feature-tag">
+                    Featured Project
+                  </span>
+                  <h2 className="hero-feature-title">The Obsidian Suite</h2>
+                  <div className="hero-feature-details">
+                    <div className="detail-item">
+                      <span className="detail-label">Materials</span>
+                      <span className="detail-value">
+                        Quartz &amp; Custom Oak
+                      </span>
+                    </div>
+                    <div className="detail-item">
+                      <span className="detail-label">Location</span>
+                      <span className="detail-value">Scottsdale, AZ</span>
+                    </div>
                   </div>
                 </div>
               </div>
